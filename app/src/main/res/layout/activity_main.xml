@@ -2,16 +2,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="vertical">
     
-    <EditText android:id="@+id/edit_message"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/edit_message"
-        android:layout_weight="1" />
-    <Button
+    <TextView
+        android:id="@+id/picoIsConnected"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_send"
-        android:onClick="sendMessage" />
+        android:layout_gravity="center_horizontal"
+        android:textSize="18sp"
+        android:text="Is connected ?"/>
+    
+    <TextView
+        android:id="@+id/picoUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Pending ..."/>
+
+    <TextView
+        android:id="@+id/picoLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="coucou"/>
+
+    <TextView
+        android:id="@+id/picoFirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="coucou"/>
+
+    <TextView
+        android:id="@+id/picoUserEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="coucou"/>
+
 </LinearLayout>
+
+
