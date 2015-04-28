@@ -231,12 +231,11 @@ public class GetDataActivity extends Activity {
         }
 
         private void displayUser(String result) {
-            JSONObject jsonResponse = null;
             LinearLayout layout = (LinearLayout) findViewById(R.id.data_layout);
             try {
                 ArrayList<TextView> viewList = new ArrayList<TextView>();
 
-                jsonResponse = new JSONObject(result);
+                JSONObject jsonResponse = new JSONObject(result);
                 String userName;
                 userName = jsonResponse.getString("used_name");
                 TextView picoUserName = new TextView(getApplicationContext());
