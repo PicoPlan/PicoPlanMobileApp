@@ -3,43 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    
+
     <TextView
-        android:id="@+id/picoIsConnected"
+        android:id="@+id/mainTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textSize="18sp"
-        android:text="Is connected ?"/>
-    
-    <TextView
-        android:id="@+id/picoUserName"
+        android:text="Que voulez-vous consulter ?"/>
+
+    <Button
+        android:id="@+id/btn_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Pending ..."/>
+        android:text="@string/user_test_btn"
+        android:onClick="setAskedData" />
 
-    <TextView
-        android:id="@+id/picoLastName"
+    <Button
+        android:id="@+id/btn_league"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="coucou"/>
+        android:text="@string/league_test_btn"
+        android:onClick="setAskedData" />
 
-    <TextView
-        android:id="@+id/picoFirstName"
+    <Button
+        android:id="@+id/btn_team"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="coucou"/>
-
-    <TextView
-        android:id="@+id/picoUserEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="coucou"/>
-
+        android:text="@string/team_test_btn"
+        android:onClick="setAskedData" />
 </LinearLayout>
 
 
