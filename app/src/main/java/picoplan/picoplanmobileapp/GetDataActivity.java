@@ -236,7 +236,6 @@ public class GetDataActivity extends Activity {
 
             try {
                 JSONObject jsonResponse = new JSONObject(result);
-                System.out.println("##############################"+jsonResponse.getString("used_name")+"###########################");
 
                 String userName;
                 userName = jsonResponse.getString("used_name");
