@@ -3,11 +3,12 @@
 
     // Main
     <string name="app_name">PicoPlanMobileApp</string>
-    <string name="user_test_btn">Un utilisateur</string>
+    <string name="user_test_btn">GO !</string>
     <string name="league_test_btn">Les ligues</string>
     <string name="team_test_btn">Les équipes</string>
     <string name="user_trailstring">users/usertest</string>
     <string name="teams_trailstring">teams</string>
     <string name="leagues_trailstring">leagues</string>
+    <string name="search_user">Un utilisateur</string>
 
 </resources>

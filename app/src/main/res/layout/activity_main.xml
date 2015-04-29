@@ -2,21 +2,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <TextView
         android:id="@+id/mainTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Que voulez-vous consulter ?"/>
+        android:text="Que voulez-vous consulter ?"
+        android:height="40dp"
+        android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/btn_user"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/user_test_btn"
-        android:onClick="setAskedData" />
+        android:layout_gravity="right">
+
+        <EditText
+            android:id="@+id/search_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/search_user"
+            android:layout_weight="1" />
+        <Button
+                android:id="@+id/btn_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_test_btn"
+                android:onClick="setAskedData"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_league"
@@ -31,6 +49,8 @@
         android:layout_height="wrap_content"
         android:text="@string/team_test_btn"
         android:onClick="setAskedData" />
+
 </LinearLayout>
+
 
 

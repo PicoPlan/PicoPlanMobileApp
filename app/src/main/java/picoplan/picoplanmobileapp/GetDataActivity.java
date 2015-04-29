@@ -34,6 +34,7 @@ import android.app.Activity;
 public class GetDataActivity extends Activity {
     TextView picoIsConnected;
     String datAskedFor;
+    String dataValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,7 @@ public class GetDataActivity extends Activity {
 
         Intent intent = getIntent();
         datAskedFor = intent.getStringExtra(MainActivity.DATA);
+        dataValue = intent.getStringExtra(MainActivity.VALUE);
 
         picoIsConnected = (TextView) findViewById(R.id.pico_is_connected);
 
@@ -57,8 +59,8 @@ public class GetDataActivity extends Activity {
         String url = "http://5.196.160.179/app_dev.php/api/";
         String trailString;
         switch (datAskedFor) {
-            case "user":
-                trailString = getString(R.string.user_trailstring);
+            case "users":
+                trailString = "users/" + dataValue;
                 break;
             case "teams":
                 trailString = getString(R.string.teams_trailstring);
@@ -135,7 +137,7 @@ public class GetDataActivity extends Activity {
             Toast.makeText(getBaseContext(), "Done !", Toast.LENGTH_LONG).show();
 
             switch (datAskedFor) {
-                case "user":
+                case "users":
                     displayUser(result);
                     break;
                 case "teams":
@@ -170,7 +172,6 @@ public class GetDataActivity extends Activity {
 
         private void addTeamViewsToLayout(LinearLayout layout, ArrayList<TextView> viewList) {
             for (TextView item : viewList) {
-                item.setTextColor(Color.BLACK);
                 layout.addView(item);
             }
         }
@@ -221,7 +222,6 @@ public class GetDataActivity extends Activity {
                     viewList.add(picoLeagueDescription);
                 }
                 for (TextView item : viewList) {
-                    item.setTextColor(Color.BLACK);
                     layout.addView(item);
                 }
             }
@@ -232,10 +232,12 @@ public class GetDataActivity extends Activity {
 
         private void displayUser(String result) {
             LinearLayout layout = (LinearLayout) findViewById(R.id.data_layout);
-            try {
-                ArrayList<TextView> viewList = new ArrayList<TextView>();
+            ArrayList<TextView> viewList = new ArrayList<>();
 
+            try {
                 JSONObject jsonResponse = new JSONObject(result);
+                System.out.println("##############################"+jsonResponse.getString("used_name")+"###########################");
+
                 String userName;
                 userName = jsonResponse.getString("used_name");
                 TextView picoUserName = new TextView(getApplicationContext());
@@ -264,6 +266,11 @@ public class GetDataActivity extends Activity {
 
             } catch (JSONException e) {
                 e.printStackTrace();
+                String userDoesNotExist = "L'utilisateur " + dataValue + " n'existe pas";
+                TextView picoUserDoesNotExist = new TextView(getApplicationContext());
+                picoUserDoesNotExist.setText(userDoesNotExist);
+                viewList.add(picoUserDoesNotExist);
+                addTeamViewsToLayout(layout, viewList);
             }
         }
     }
